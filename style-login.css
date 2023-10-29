@@ -1,0 +1,377 @@
+/* defaults */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
+}
+ /* body {
+    font-family: 'Montserrat', sans-serif;
+ } */
+
+ /* header */
+  header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 999;
+  }
+
+.nav-brand img {
+   position: relative;
+   width: 55px;
+   height: 55px;
+}
+
+
+  .logo {
+   font-size: 2em;
+   color: #fff;
+   user-select: none;
+  }
+
+.navigation a {
+   color: #fff;
+   font-size: 1.1em;
+   font-weight: 400;
+   margin-left: 40px;
+   position: relative;
+   text-decoration: none;
+  }
+  /* create a line under tab */
+  .navigation a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      left: 0;
+      bottom: -6px;
+      transform: scaleX(0);
+      transition: transform .5s;
+      transform-origin: right ;
+  }
+  .navigation a:hover::after { 
+      transform: scaleX(1);
+      transform-origin: left ;
+
+  }
+
+  .navigation .loginBtn-popup {
+   width: 130px;
+   height: 50px;
+   background: transparent;
+   border: 2px solid #fff;
+   outline: none;
+   border-radius: 6px;
+   cursor: pointer;
+   margin-left: 40px;
+   font-size: 1.1em;
+   color: #fff;
+   font-weight: 500;
+   transition: .5s;
+  }
+
+  .navigation .loginBtn-popup:hover {
+   background: #fff;
+   color: grey;
+  }
+
+/*  welcome */
+.welcome.active {
+   transform: translateY(-40%);
+   position: absolute;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   display: block;
+   transition: transform .5s ease , height .2s ease;
+}
+.welcome {
+   display: none;
+   
+}
+.welcome h1 {
+   font-size: 4em;
+   font-weight: 700;
+   padding: 10px;
+}
+.welcome p {
+   font-size: 1.2em;
+   font-weight: 500;
+
+}
+
+
+  /* form */
+
+  .wrapper {
+   position: relative;
+   width: 400px;
+   height: 440px;
+   background: transparent;
+   border: 2px solid rgba(225, 225, 225, 0.5);
+   border-radius: 20px;
+   backdrop-filter: blur(20px) ;
+   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   overflow: hidden;
+
+   transform: scale(0);
+   transition: transform .5s ease , height .2s ease;
+  }
+
+  /* wrapper active */
+
+  .wrapper.active-popup {
+   transform: scale(1);
+
+  }
+  /* loginnnnnnnnn */
+.wrapper .form-box.login {
+   transform: 0.18s ease;
+   transform: translateX(0);
+   display: block; 
+}
+.wrapper.active .form-box.login {
+   transform: 0.18s ease;
+   transform: translateX(-400px);
+   display: none;
+}
+.wrapper .form-box.register {
+   position: absolute;
+   transform: none;
+   transform: translateX(400px);
+   display: none;
+}
+.wrapper.active .form-box.register {
+   transform: 0.18s ease;
+   transform: translateX(-0);
+   display: block;    
+}
+
+
+.wrapper.active {
+   height: 520px;
+}
+
+
+  .wrapper .form-box {
+      width: 100%;
+      padding: 40px;
+  }
+
+  .form-box h2 {
+   font-size: 2em;
+   color: #060714;
+   text-align: center;
+  }
+
+  .input-box {
+   position: relative;
+   width: 100%;
+   height: 50px;
+   border-bottom: 2px solid #162938;
+   margin: 30px 0;
+  }
+
+  .input-box label {
+   position: absolute;
+   top: 50% ;
+   left: 5px;
+   transform: translateY(-50%);
+   font-size: 1em;
+   color: #000 ;
+   font-weight: 500;
+   pointer-events: none;
+   transition: 0.5s;
+  }
+  .input-box input:focus~label,
+  .input-box input:valid~label {
+      top: -5px;
+  }
+  .input-box input {
+   width: 100%;
+   height: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   font-size: 1em;
+   color: #0f0f0f;
+   padding: 0 35px 0 5px;
+   font-weight: 500;
+  }
+
+  .input-box .icon {
+   position: absolute;
+   right: 8px;
+   line-height: 58px;
+   font-size: 1.2em;
+   text-align: center;
+  }
+
+.remember {
+   font-size: 0.9em;
+   color: #0f0f0f;
+   font-weight: 500;
+   margin: -15px 0 15px 0;
+   display: flex;
+   justify-content: space-between;
+}
+
+.remember label input {
+   accent-color: #0f0f0f;
+   margin-right: 3px;
+}
+
+.remember a {
+   color: #0f0f0f;
+   text-decoration: none;
+   
+}
+.remember a:hover {
+   text-decoration: underline;
+}
+
+.btn {
+   width: 100%;
+   height: 45px;
+   border-radius: 5px;
+   background: #0f0f0f;
+   color: #fff; 
+   border: none;
+   outline: none;
+   cursor: pointer;
+   font-size: 1.em;
+   font-weight: 500;
+}
+
+.login-register {
+   font-size: 0.9em;
+   color: #0f0f0f;
+   text-align: center;
+   font-weight: 500px;
+   margin: 25px 0 10px;
+}
+
+.login-register p a {
+   color: #0f0f0f;
+   text-decoration: none;
+   font-weight: 600;
+}
+.login-register p a:hover {
+   text-decoration: underline;
+}
+
+.wrapper .icon-close {
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 45px;
+   height: 45px;
+   background: #0f0f0f;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2em;
+   border-bottom-left-radius: 20px;
+   cursor: pointer;
+   z-index: 11;
+}
+  /* body */
+  body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: url('/img/img1.jpg')  top center / cover no-repeat ; 
+  }
+
+/* .slider {
+   height: 100%;
+   width: 100%;
+   min-height: 100vh;
+   max-width: 100wh ;
+   margin: auto;
+   position: relative;
+   
+}
+
+.list {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: flex;
+   width: max-content;
+}
+
+.list img {
+   max-width: 100vm;
+   height: 100%;
+   object-fit: cover;
+   
+   background: top center / cover no-repeat ;
+}
+
+.buttons {
+   position: absolute;
+   top : 45% ;
+   left: 5% ;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.buttons button {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+
+   background-color: #fff5;
+   color: #fff;
+   border: none;
+   font-weight: bold;
+}
+
+.dots {
+   position: absolute;
+   bottom: 10px;
+   left: 0;
+   color: #fff;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   
+}
+
+.dots li {
+   list-style: none;
+   width: 10px;
+   height: 10px;
+   background-color: #fff;
+   margin: 20px;
+   border-radius:20px ;
+}
+
+.dots li.active {
+   width: 30px;
+} */
+
+
+
+
+
+
